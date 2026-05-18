@@ -1,0 +1,24 @@
+{
+  "name": "opencode-notify-cmux",
+  "version": "0.1.0",
+  "description": "OpenCode plugin that sends cmux desktop notifications for session lifecycle events",
+  "type": "module",
+  "main": "hooks.js",
+  "exports": {
+    ".": "./hooks.js"
+  },
+  "scripts": {
+    "pull:github": "git pull origin main"
+  },
+  "files": [
+    "hooks.js",
+    "README.md"
+  ],
+  "keywords": [
+    "opencode",
+    "plugin",
+    "cmux",
+    "notifications"
+  ],
+  "license": "MIT"
+}
