@@ -1,6 +1,21 @@
-import { spawn } from 'child_process';
+import { spawn, spawnSync } from 'child_process';
 
-const CMUX_BIN = '/opt/homebrew/bin/cmux';
+function resolveCmuxPath() {
+    const result = spawnSync('which', ['cmux'], {
+        encoding: 'utf8'
+    });
+
+    if (result.status === 0) {
+        const bin = result.stdout.trim();
+        if (bin) {
+            return bin;
+        }
+    }
+
+    return '/opt/homebrew/bin/cmux';
+}
+
+const CMUX_BIN = resolveCmuxPath();
 
 function notify({ subtitle, body = 'OpenCode event' }) {
     const child = spawn(CMUX_BIN, [
