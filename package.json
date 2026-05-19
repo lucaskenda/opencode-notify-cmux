@@ -1,6 +1,6 @@
 {
   "name": "opencode-notify-cmux",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "OpenCode plugin that sends cmux desktop notifications for session lifecycle events",
   "type": "module",
   "main": "hooks.js",
